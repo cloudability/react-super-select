@@ -8,6 +8,8 @@
 
 'use strict';
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var _ = require('lodash'),
     classNames = require('classnames'),
     React = (typeof window !== "undefined" ? window['React'] : typeof global !== "undefined" ? global['React'] : null);
@@ -898,9 +900,9 @@ var ReactSuperSelect = React.createClass({
           indexRef = 'option_' + index,
           ariaDescendantId = this.state.controlId + '_aria_' + indexRef,
           optionMarkup = _.isFunction(this.props.customOptionTemplateFunction) ? this.props.customOptionTemplateFunction(dataOption) : dataOption[this.state.labelKey],
-          classes = classNames('r-ss-dropdown-option', {
+          classes = classNames('r-ss-dropdown-option', _defineProperty({
         'r-ss-selected': isCurrentlySelected
-      });
+      }, dataOption.className, dataOption.className));
 
       return React.createElement(
         'li',
