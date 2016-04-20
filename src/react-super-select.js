@@ -853,7 +853,8 @@ var ReactSuperSelect = React.createClass({
           ariaDescendantId = this.state.controlId + '_aria_' + indexRef,
           optionMarkup = _.isFunction(this.props.customOptionTemplateFunction) ? this.props.customOptionTemplateFunction(dataOption) : dataOption[this.state.labelKey],
           classes = classNames('r-ss-dropdown-option', {
-            'r-ss-selected': isCurrentlySelected
+            'r-ss-selected': isCurrentlySelected,
+            [dataOption.className] : dataOption.className
           });
 
       return (
